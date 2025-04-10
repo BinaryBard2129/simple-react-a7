@@ -3,7 +3,7 @@ import { FaRegHeart } from 'react-icons/fa';
 const Auction = ({auctions}) => {
     return (
         <div>
-         <div className="overflow-x-auto rounded-box border border-base-content/5 bg-base-100">
+         <div className="overflow-x-auto rounded-box border border-base-content/5 bg-base-100 shadow-md">
       <table className="table">
         <thead>
           <tr>

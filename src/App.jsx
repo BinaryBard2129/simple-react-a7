@@ -1,6 +1,7 @@
 
 
 import './App.css'
+import Footer from './Components/Footer/Footer'
 import Auctions from './Components/Auctions/Auctions'
 import Banner from './Components/Banner/Banner'
 import Navbar from './Components/Navbar/Navbar'
@@ -17,13 +18,13 @@ function App() {
       
       <Navbar></Navbar>
       <Banner></Banner>
-      <div className='bg-blue-100 '>
+      <div className='bg-blue-100 h-[60vw]'>
       <div className='Main-Container flex'>
         <div className='left-container w-[70%]'> 
            <Auctions></Auctions>  
         </div>
         <div className='right-container w-[30%] mt-32 mr-10'> 
-        <div className="bg-white rounded-xl shadow-md p-6 w-80  text-center flex flex-col justify-between h-60">
+        <div className="bg-white rounded-xl shadow-md p-6 w-80  text-center flex flex-col justify-between h-60"> 
       <div>
         <div className="flex items-center justify-center gap-2 text-blue-900 font-semibold text-lg mb-4">
         <CiHeart />
@@ -34,7 +35,7 @@ function App() {
         <p className="text-gray-500 text-sm mt-1">
           Click the heart icon on any item<br />to add it to your favorites
         </p>
-      </div>
+      </div> 
 
       <div className="border-t pt-4 mt-4 flex justify-between text-sm font-medium">
         <span>Total bids Amount</span>
@@ -44,6 +45,7 @@ function App() {
         </div>
       </div>
       </div>
+      <Footer></Footer>
     </>
   )
 }
