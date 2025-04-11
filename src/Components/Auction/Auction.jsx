@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaRegHeart } from 'react-icons/fa';
-const Auction = ({auctions}) => {
+const Auction = ({auctions , handleProduct }) => {
     return (
         <div>
          <div className="overflow-x-auto rounded-box border border-base-content/5 bg-base-100 shadow-md">
@@ -41,7 +41,7 @@ const Auction = ({auctions}) => {
 
               
               <td>
-                <button className=" text-red-500 text-lg">
+                <button onClick={()=>handleProduct(item)} className=" text-red-500 text-lg">
                   <FaRegHeart /> 
                 </button>
               </td>
