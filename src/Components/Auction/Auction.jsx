@@ -23,7 +23,7 @@ const Auction = ({auctions , handleProduct }) => {
                   <div className="w-16 h-16">
                     <img
                       src={item.image}
-                      alt={item.name}
+                      alt={item.name} 
                       className="w-full h-full object-cover rounded"
                     />
                   </div>

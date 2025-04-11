@@ -13,13 +13,18 @@ import { useState } from 'react'
 function App() {
   
    const [products , setProducts] = useState([])
-
+   
 
    const handleProduct = (item) => {
     const newProduct = [...products , item]
     setProducts(newProduct) 
+    
    }
   
+  const handleRemoveButton = (id) => {
+    setProducts(prevProducts => prevProducts.filter((prod) => prod.id !== id))
+  }
+
   return (
     <>
       
@@ -28,7 +33,7 @@ function App() {
       <div className='bg-blue-100 h-[60vw]'>
       <div className='Main-Container flex'>
         <div className='left-container w-[70%]'> 
-          <Auctions handleProduct={handleProduct}></Auctions>  
+          <Auctions handleProduct={handleProduct} handleRemoveButton={handleRemoveButton}></Auctions>  
         </div>
         <div className='right-container w-[30%] mt-32 mr-10'> 
         <div className="bg-white rounded-xl shadow-md p-6 w-80 text-center flex flex-col justify-between h-auto"> 
@@ -37,7 +42,7 @@ function App() {
         <CiHeart />
           <span>Favorite Items</span>
         </div>
-      <div className='space-y-2'>
+      <div className='space-y-2'> 
         {
           products.map((prod)=> 
             <div className="bg-white p-2 rounded-2xl shadow-md flex items-center gap-4  w-full max-w-md">
@@ -51,13 +56,13 @@ function App() {
             <div className="flex justify-between items-start">
               <h2 className="text-base font-semibold text-gray-800">{prod.name}</h2>
               <button className="text-gray-400 hover:text-red-500 transition">
-                <RxCross2 size={18} />
+                <RxCross2 onClick={()=>handleRemoveButton(prod.id)} size={18} /> 
               </button>
             </div>
         
             <div className="text-sm text-gray-600 flex justify-between">
               <p className="font-medium"> {prod.bid}</p>
-              <p className="text-xs text-gray-400">Bids: 12</p>  
+              <p className="text-xs text-gray-400">Bids: 12</p> 
             </div>
           </div>
         </div>
