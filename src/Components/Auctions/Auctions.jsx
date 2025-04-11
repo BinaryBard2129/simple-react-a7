@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Auction from '../Auction/Auction';
 
-const Auctions = ({handleProduct, handleRemoveButton}) => {
+const Auctions = ({handleProduct , handleCountButton}) => {
     
     const [auctions , setAuction] = useState([])
 
@@ -16,7 +16,7 @@ const Auctions = ({handleProduct, handleRemoveButton}) => {
             <p className='font-light'>Discover and bid on extraordinary items</p> 
             </div>
             <div className='flex justify-center items-center mt-5'> 
-                <Auction auctions={auctions} handleProduct={handleProduct} handleRemoveButton={handleRemoveButton} ></Auction> 
+                <Auction auctions={auctions} handleProduct={handleProduct} handleCountButton={handleCountButton} ></Auction> 
             </div>
         </div>
     );

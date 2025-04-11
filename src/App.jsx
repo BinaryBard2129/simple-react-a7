@@ -13,7 +13,7 @@ import { useState } from 'react'
 function App() {
   
    const [products , setProducts] = useState([])
-   
+   const [counts , setCount] = useState(0)
 
    const handleProduct = (item) => {
     const newProduct = [...products , item]
@@ -25,6 +25,11 @@ function App() {
     setProducts(prevProducts => prevProducts.filter((prod) => prod.id !== id))
   }
 
+  const handleCountButton = (value) => {
+    const numericValue = Number(value.replace(/[$,]/g, '')); 
+  setCount(prevCount => prevCount + numericValue);
+  }
+
   return (
     <>
       
@@ -33,7 +38,7 @@ function App() {
       <div className='bg-blue-100 h-[60vw]'>
       <div className='Main-Container flex'>
         <div className='left-container w-[70%]'> 
-          <Auctions handleProduct={handleProduct} handleRemoveButton={handleRemoveButton}></Auctions>  
+          <Auctions handleProduct={handleProduct} handleCountButton={handleCountButton}></Auctions>  
         </div>
         <div className='right-container w-[30%] mt-32 mr-10'> 
         <div className="bg-white rounded-xl shadow-md p-6 w-80 text-center flex flex-col justify-between h-auto"> 
@@ -73,7 +78,7 @@ function App() {
 
       <div className="border-t pt-4 mt-4 flex justify-between text-sm font-medium">
         <span>Total bids Amount</span>
-        <span className="font-semibold text-black">$0000</span> 
+        <span className="font-semibold text-black">${counts.toLocaleString()}</span> 
       </div>
     </div>
         </div>
